@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Shop;
+use Illuminate\Support\Facades\Hash;
 
 class ShopSeeder extends Seeder
 {
@@ -17,7 +18,7 @@ class ShopSeeder extends Seeder
         Shop::create([
             'name' => '店舗',
             'email' => 'shop@shop.shop',
-            'password' => 'password'
+            'password' => Hash::make('password')
         ]);
     }
 }
