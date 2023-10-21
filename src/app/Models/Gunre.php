@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Gunre extends Model
 {
     use HasFactory;
-    public function shopThumbnailFeature(){
-        return $this->belongsTo('App\Models\ShopThumbnailFeature');
+    public function shopImportant(){
+        return $this->belongsTo('App\Models\ShopImportant');
     }
 }

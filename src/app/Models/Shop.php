@@ -66,6 +66,14 @@ class Shop extends Authenticatable
         return $this->hasOne('App\Models\ShopThumbnail');
     }
 
+    public function profile(){
+        return $this->hasOne('App\Models\Profile');
+    }
+
+    public function ShopFeature(){
+        return $this->hasMany('App\Models\ShopFeature');
+    }
+
     public function shopGunres(){
         return $this->hasMany('App\Models\ShopGunres');
     }

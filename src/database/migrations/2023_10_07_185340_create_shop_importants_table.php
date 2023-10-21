@@ -15,7 +15,6 @@ class CreateShopImportantsTable extends Migration
     {
         Schema::create('shop_importants', function (Blueprint $table) {
             $table->id();
-            $table->string('status');
             $table->string('phone');
             $table->char('postcode', 7);
             $table->string('address');
@@ -23,7 +22,10 @@ class CreateShopImportantsTable extends Migration
             $table->time('end_time');
             $table->integer('min_price');
             $table->integer('max_price');
-            $table->foreignId('shop_id')->constrained();
+            $table->foreignId('area_id')->constrained();
+            $table->foreignId('gunre_id')->constrained();
+            $table->unsignedBigInteger('shop_id')->unique();
+            $table->foreign('shop_id')->references('id')->on('shops');
             $table->timestamps();
         });
     }

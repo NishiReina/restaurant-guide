@@ -12,4 +12,8 @@ class Review extends Model
     public function reservation(){
         return $this->belongsTo('App\Models\Reservation');
     }
+
+    public function pickup(){
+        return $this->hasOne('App\Models\Pickup');
+    }
 }

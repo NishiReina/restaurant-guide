@@ -15,10 +15,9 @@ class CreateReservationsTable extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
-            $table->unsignedSmallInteger('status');
+            $table->unsignedSmallInteger('status')->default(0);
             $table->unsignedSmallInteger('number');
-            $table->date('date');
-            $table->string('time');
+            $table->timestamp('datetime');
             $table->foreignId('user_id')->constrained();
             $table->foreignId('shop_id')->constrained();
             $table->timestamps();

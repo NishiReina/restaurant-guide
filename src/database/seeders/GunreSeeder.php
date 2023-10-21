@@ -45,5 +45,9 @@ class GunreSeeder extends Seeder
         Gunre::create([
             'name' => 'ステーキ'
         ]);
+        
+        Gunre::create([
+            'name' => 'ラーメン'
+        ]);
     }
 }

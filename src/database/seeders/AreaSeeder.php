@@ -14,7 +14,8 @@ class AreaSeeder extends Seeder
      */
     public function run()
     {
-        Area::create([
+
+        $prefectures = [
             ['name' => '北海道'],
             ['name' => '青森県'],
             ['name' => '岩手県'],
@@ -62,6 +63,10 @@ class AreaSeeder extends Seeder
             ['name' => '宮崎県'],
             ['name' => '鹿児島県'],
             ['name' => '沖縄県'],
-        ]);
+        ];
+
+        foreach($prefectures as $prefecture){
+            Area::create($prefecture);
+        }
     }
 }

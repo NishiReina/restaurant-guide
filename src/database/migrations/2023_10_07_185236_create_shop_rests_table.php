@@ -17,6 +17,7 @@ class CreateShopRestsTable extends Migration
             $table->id();
             $table->foreignId('rest_id')->constrained();
             $table->foreignId('shop_id')->constrained();
+            $table->unique(['rest_id', 'shop_id']);
             $table->timestamps();
         });
     }

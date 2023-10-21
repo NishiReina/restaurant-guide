@@ -9,7 +9,7 @@ class ShopThumbnail extends Model
 {
     use HasFactory;
 
-    public function ShopThumbnailFeature(){
-        return $this->hasMany('App\Models\ShopThumbnailFeature');
+    public function shop(){
+        return $this->belongsTo('App\Models\Shop');
     }
 }

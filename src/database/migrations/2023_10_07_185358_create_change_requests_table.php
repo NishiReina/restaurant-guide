@@ -15,16 +15,20 @@ class CreateChangeRequestsTable extends Migration
     {
         Schema::create('change_requests', function (Blueprint $table) {
             $table->id();
-            $table->string('status');
-            $table->string('phone');
-            $table->char('postcode', 7);
-            $table->string('address');
-            $table->time('start_time');
-            $table->time('end_time');
-            $table->integer('min_price');
-            $table->integer('max_price');
-            $table->foreignId('area_id')->constrained();
-            $table->foreignId('shop_important_id')->constrained();
+            $table->unsignedSmallInteger('status')->default(0);
+            $table->string('phone')->nullable();
+            $table->char('postcode', 7)->nullable();
+            $table->string('address')->nullable();
+            $table->time('start_time')->nullable();
+            $table->time('end_time')->nullable();
+            $table->integer('min_price')->nullable();
+            $table->integer('max_price')->nullable();
+            $table->unsignedBigInteger('area_id')->nullable();
+            $table->foreign('area_id')->references('id')->on('areas');
+            $table->unsignedBigInteger('gunre_id')->nullable();
+            $table->foreign('gunre_id')->references('id')->on('gunres');
+            $table->unsignedBigInteger('shop_important_id')->unique();
+            $table->foreign('shop_important_id')->references('id')->on('shop_importants');
             $table->timestamps();
         });
     }

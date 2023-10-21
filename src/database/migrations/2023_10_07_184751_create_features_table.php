@@ -16,6 +16,7 @@ class CreateFeaturesTable extends Migration
         Schema::create('features', function (Blueprint $table) {
             $table->id();
             $table->string('content');
+            $table->string('img_url');
             $table->timestamps();
         });
     }

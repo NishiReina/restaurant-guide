@@ -17,6 +17,10 @@ class ShopImportant extends Model
         return $this->hasOne('App\Models\Area');
     }
 
+    public function gunre(){
+        return $this->hasOne('App\Models\Gunre');
+    }
+
     public function changeRequest(){
         return $this->hasOne('App\Models\ChangeRequest');
     }

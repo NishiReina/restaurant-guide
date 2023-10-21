@@ -18,7 +18,8 @@ class CreateShopThumbnailsTable extends Migration
             $table->string('img_url');
             $table->string('title');
             $table->string('pr');
-            $table->foreignId('shop_id')->constrained();
+            $table->unsignedBigInteger('shop_id')->unique();
+            $table->foreign('shop_id')->references('id')->on('shops');
             $table->timestamps();
         });
     }

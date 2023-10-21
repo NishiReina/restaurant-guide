@@ -9,6 +9,8 @@ class Area extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name'];
+
     public function shopImportant(){
         return $this->belongsTo('App\Models\ShopImportant');
     }
