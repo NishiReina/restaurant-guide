@@ -4,6 +4,8 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Shop\ShopController;
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Shop\ShopLoginController;
+use App\Http\Controllers\Shop\ShopRegisterController;
+use App\Http\Controllers\RestaurantGuideController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +19,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [RestaurantGuideController::class, 'top']);
+Route::get('/detail/{shop}', [RestaurantGuideController::class, 'detail']);
+
+Route::get('shop/register', [ShopRegisterController::class, 'create'])->name('admin.register');
+ Route::post('register', [ShopRegisterController::class, 'store']);
 
 Route::prefix('admin')->group(function () {
     Route::get('login', [AdminLoginController::class, 'create'])->name('admin.login');

@@ -1,0 +1,61 @@
+.detail{
+    padding-top: 100rem;
+}
+
+/*タブ切り替え全体のスタイル*/
+.tabs {
+    margin-top: 50rem;
+    width: 100%;
+    margin: 0 auto;}
+  
+  /*タブのスタイル*/
+.tab_item {
+    width: calc(100%/3);
+    height: 50rem;
+    border-bottom: 3px solid #5ab4bd;
+    /* border-bottom: 3px solid #BFBFBF; */
+    background-color: #d9d9d9;
+    /* background-color: #f5f5f5; */
+    line-height: 50rem;
+    text-align: center;
+    color: #565656;
+    display: block;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+.tab_item:hover {
+    opacity: 0.75;
+}
+  
+  /*ラジオボタンを全て消す*/
+input[name="tab_item"] {
+    display: none;
+}
+  
+/*タブ切り替えの中身のスタイル*/
+.tab_content {
+    display: none;
+    clear: both;
+    overflow: hidden;
+    padding: 50rem 0;
+}
+  
+  
+/*選択されているタブのコンテンツのみを表示*/
+#all:checked ~ #all_content,
+#photo:checked ~ #photo_content,
+#review:checked ~ #review_content {
+    display: block;
+}
+  
+/*選択されているタブのスタイルを変える*/
+.tabs input:checked + .tab_item {
+    background-color: #5ab4bd;
+    color: #fff;
+}
+
+.shopMain{
+    width: 100%;
+}

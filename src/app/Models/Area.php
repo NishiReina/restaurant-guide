@@ -14,4 +14,8 @@ class Area extends Model
     public function shopImportant(){
         return $this->belongsTo('App\Models\ShopImportant');
     }
+
+    public function region(){
+        return $this->belongsTo('App\Models\Region');
+    }
 }

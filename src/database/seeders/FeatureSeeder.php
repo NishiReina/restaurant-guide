@@ -52,7 +52,7 @@ class FeatureSeeder extends Seeder
         ]);
         Feature::create([
             'content' => 'コスパ',
-            'img_url' => 'img/feature_reasonable.jpg'
+            'img_url' => 'img/feature_reasonable.jpeg'
         ]);
     }
 }

@@ -18,7 +18,7 @@ class ShopImportant extends Model
     }
 
     public function gunre(){
-        return $this->hasOne('App\Models\Gunre');
+        return $this->belongsTo('App\Models\Gunre');
     }
 
     public function changeRequest(){

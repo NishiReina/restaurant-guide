@@ -20,6 +20,20 @@ class CreateShopsTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            // 変更申請が必要
+            $table->string('phone');
+            $table->char('postcode', 7);
+            $table->string('address');
+            $table->time('start_time');
+            $table->time('end_time');
+            $table->integer('min_price');
+            $table->integer('max_price');
+            $table->foreignId('area_id')->constrained();
+            $table->foreignId('gunre_id')->constrained();
+            // 店舗側がいつでも修正可能
+            $table->string('img_url');
+            $table->string('title');
+            $table->string('pr');
             $table->timestamps();
         });
     }

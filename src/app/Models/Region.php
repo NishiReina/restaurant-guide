@@ -5,12 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ShopThumbnail extends Model
+class Region extends Model
 {
     use HasFactory;
 
-    public function shop(){
-        return $this->belongsTo('App\Models\Shop');
+    public function areas(){
+        return $this->hasMany('App\Models\Area');
     }
-
 }

@@ -16,10 +16,11 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         $this->call(UserSeeder::class);
         $this->call(AdminSeeder::class);
-        $this->call(ShopSeeder::class);
-        $this->call(FeatureSeeder::class);
+        $this->call(RegionSeeder::class);
         $this->call(GunreSeeder::class);
         $this->call(AreaSeeder::class);
+        $this->call(ShopSeeder::class);
+        $this->call(FeatureSeeder::class);
         $this->call(ProfileSeeder::class);
         $this->call(ReservationSeeder::class);
         $this->call(RestSeeder::class);

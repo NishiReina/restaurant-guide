@@ -1,0 +1,61 @@
+*{
+    color: #000;
+}
+
+.mainview{
+    background-image: url('../img/top-back.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 150rem;
+}
+
+.top__areas{
+    margin-top: 50rem;
+    gap: 50rem;
+}
+
+.area{
+    width: 25%;
+}
+
+.region{
+    border: 1px solid #E1E1E1;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 20rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.prefecture{
+    display: block;
+    text-align: center;
+    margin-top: 15rem;
+}
+
+.top__features{
+    margin-top: 50rem;
+    gap: 20rem;
+}
+
+.feature{
+    display: block;
+}
+
+.feature__img{
+    width: 200rem;
+    height: 133.35rem; 
+}
+
+.feature__img img{
+    height: 100%;
+    object-fit: cover;
+}
+
+.feature__ttl{
+    font-weight: bold;
+    margin-top: 10rem;
+}
