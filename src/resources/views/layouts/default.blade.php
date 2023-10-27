@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/reset.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/common.css')}}">
     @stack('css')
+    @stack('js')
 </head>
 <body>
     <header class="header flex_row_space-between">

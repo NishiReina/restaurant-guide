@@ -27,6 +27,18 @@ class Shop extends Authenticatable
         'name',
         'email',
         'password',
+        'phone',
+        'postcode',
+        'address',
+        'start_time',
+        'end_time',
+        'min_price',
+        'max_price',
+        'area_id',
+        'gunre_id',
+        'img_url',
+        'title',
+        'pr',
     ];
 
     /**
