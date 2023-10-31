@@ -25,7 +25,7 @@
             <div class="shopMain flex_row_space-between">
                 <div class="shopMain__right">
                     <h2 class="shop__name">{{$shop->name}}</h2>
-                    <div class="star">☆3.7</div>
+                    <div class="rate-wrap">総合評価<span class="rate" style ="--score: {{ 1.5 }}"></span><span class="num">3.5</span></div>
                 </div>
                 <form action="" method="post" class="shopMain__left">
                     @csrf
@@ -33,8 +33,8 @@
                 </form>
             </div>
             <div class="shopInfo flex_row_start gap-20rem">
-                <p class="shopInfo__gunre"><span class="font__bold label-margin-right">ジャンル:</span>{{$shop->shopImportant->gunre->name}}</p>
-                <p class="shopInfo__price"><span class="font__bold label-margin-right">予算:</span>{{$shop->shopImportant->min_price}} 〜 {{$shop->shopImportant->max_price}}</p>
+                <p class="shopInfo__gunre"><span class="font__bold label-margin-right">ジャンル:</span>{{$shop->gunre->name}}</p>
+                <p class="shopInfo__price"><span class="font__bold label-margin-right">予算:</span>{{$shop->min_price}} 〜 {{$shop->max_price}}</p>
                 <div class="shopInfo__rests"><span class="font__bold label-margin-right">定休日:</span>
                 @foreach($shop->shopRests as $shopRest)
                     {{$shopRest->rest->name}}

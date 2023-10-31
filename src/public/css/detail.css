@@ -12,8 +12,8 @@
 .tab_item {
     width: calc(100%/3);
     height: 50rem;
-    border-bottom: 3px solid #5ab4bd;
-    /* border-bottom: 3px solid #BFBFBF; */
+    border-bottom: 3rem solid #5ab4bd;
+    /* border-bottom: 3rem solid #BFBFBF; */
     background-color: #d9d9d9;
     /* background-color: #f5f5f5; */
     line-height: 50rem;
@@ -56,6 +56,49 @@ input[name="tab_item"] {
     color: #fff;
 }
 
+.rate {
+    position: relative;
+    display: inline-block;
+    width: 150rem;
+    height: 30rem; 
+    font-size: 30rem;
+}
+
+.rate::before,
+.rate::after {
+    position: absolute;
+    display: inline-block;
+    height: 30rem;
+    content: "★★★★★";
+    line-height: 30rem;
+}
+.rate::before {
+    color: #c4c4c4;
+}
+.rate::after {
+    overflow: hidden;
+    width: calc(var(--score) * 30rem);
+    color: #ffb906;
+}
+.rate-wrap {
+    display: flex;
+    width: 330rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5rem;
+    border: 1.5rem solid #e8d8b0;
+    margin: 20rem auto 0;
+    font-weight: bold;
+    }
+
+.shop{
+    padding-top: 100rem;
+}
+
 .shopMain{
     width: 100%;
+}
+
+.shop__name{
+    font-size: 24rem;
 }
