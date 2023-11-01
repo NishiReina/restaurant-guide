@@ -158,11 +158,48 @@ input {
     text-align: center;
 }
 
+/* 星評価 */
+.label-margin-right{
+    margin-right: 10rem;
+}
+
+.rate {
+    position: relative;
+    display: inline-block;
+    width: 150rem;
+    height: 30rem; 
+    font-size: 30rem;
+}
+
+.rate::before,
+.rate::after {
+    position: absolute;
+    display: inline-block;
+    height: 30rem;
+    content: "★★★★★";
+    line-height: 30rem;
+}
+.rate::before {
+    color: #c4c4c4;
+}
+.rate::after {
+    overflow: hidden;
+    width: calc(var(--score) * 30rem);
+    color: #ffb906;
+}
+.rate-wrap {
+    display: flex;
+    width: 330rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5rem;
+    border: 1.5rem solid #e8d8b0;
+    margin: 20rem auto 0;
+    font-weight: bold;
+    }
+
 /* 共通クラス */
 .font__bold{
     font-weight: bold;
 }
 
-.label-margin-right{
-    margin-right: 10rem;
-}

@@ -102,3 +102,21 @@ input[name="tab_item"] {
 .shop__name{
     font-size: 24rem;
 }
+
+.shopMain__left{
+    width: 80rem;
+    border: 2px solid #565656;
+    padding: 5rem;
+}
+
+.shop__save{
+    width: 15rem;
+}
+
+/* .shop__save--btn{
+    font-size: 16rem;
+} */
+
+.shopInfo{
+    margin-top: 20rem;
+}

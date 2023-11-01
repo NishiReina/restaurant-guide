@@ -70,16 +70,13 @@ class Shop extends Authenticatable
     // protected $appends = [
     //     'profile_photo_url',
     // ];
-    public function shopImportant(){
-        return $this->hasOne('App\Models\ShopImportant');
+
+    public function area(){
+        return $this->belongsTo('App\Models\Area');
     }
 
-    public function shopThumbnail(){
-        return $this->hasOne('App\Models\ShopThumbnail');
-    }
-
-    public function profile(){
-        return $this->hasOne('App\Models\Profile');
+    public function gunre(){
+        return $this->belongsTo('App\Models\Gunre');
     }
 
     public function ShopFeature(){
