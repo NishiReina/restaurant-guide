@@ -47,7 +47,7 @@
 
 .feature__img{
     width: 200rem;
-    height: 133.35rem; 
+    height: 133.35rem; /** 3/4の比率**/
 }
 
 .feature__img img{

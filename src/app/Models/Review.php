@@ -8,7 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Review extends Model
 {
     use HasFactory;
-
+    
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
+    
     public function reservation(){
         return $this->belongsTo('App\Models\Reservation');
     }
@@ -16,4 +20,5 @@ class Review extends Model
     public function pickup(){
         return $this->hasOne('App\Models\Pickup');
     }
+
 }

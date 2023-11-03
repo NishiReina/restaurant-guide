@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Pickup;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -25,10 +26,9 @@ class DatabaseSeeder extends Seeder
         $this->call(ReservationSeeder::class);
         $this->call(RestSeeder::class);
         $this->call(ReviewSeeder::class);
-        $this->call(ShopImportantSeeder::class);
         $this->call(ShopRestSeeder::class);
-        $this->call(ShopThumbnailSeeder::class);
         $this->call(ShopFeatureSeeder::class);
         $this->call(ChangeRequestSeeder::class);
+        $this->call(PickupSeeder::class);
     }
 }

@@ -38,9 +38,13 @@
                 <p class="shopInfo__gunre"><span class="font__bold label-margin-right">ジャンル:</span>{{$shop->gunre->name}}</p>
                 <p class="shopInfo__price"><span class="font__bold label-margin-right">予算:</span>{{$shop->min_price}} 〜 {{$shop->max_price}}</p>
                 <div class="shopInfo__rests"><span class="font__bold label-margin-right">定休日:</span>
-                @foreach($shop->shopRests as $shopRest)
-                    {{$shopRest->rest->name}}
-                @endforeach
+                @if(!$shop->shopRests)
+                    @foreach($shop->shopRests as $shopRest)
+                        {{$shopRest->rest->name}}
+                    @endforeach
+                @else
+                定休日なし
+                @endif
                 </div>
             </div>
         </section>

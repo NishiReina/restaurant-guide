@@ -9,7 +9,16 @@ class Pickup extends Model
 {
     use HasFactory;
 
+    protected $fillable = [ 
+        'shop_id',
+        'review_id',
+    ];
+
     public function review(){
         return $this->belongsTo('App\Models\Review');
+    }
+
+    public function shop(){
+        return $this->belongsTo('App\Models\Shop');
     }
 }

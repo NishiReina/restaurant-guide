@@ -1,3 +1,12 @@
+
+:root {
+    --point-blue: #5ab4bd;
+    --border-gray: #F5F5F5;
+    --backgroud-gray: #d9d9d9;
+    --dark-gray: #565656;
+
+  }
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -9,7 +18,7 @@ html{
 }
 
 body{
-    font-size: 16rem;
+    font-size: 14rem;
 }
 
 img{
@@ -59,6 +68,11 @@ input {
     align-items: center;
 }
 
+.flex_column{
+    display: flex;
+    flex-direction: column;
+}
+
 .flex_column_center{
     display: flex;
     flex-direction: column;
@@ -77,8 +91,20 @@ input {
     gap: 10rem;
 }
 
+.gap-15rem{
+    gap: 15rem;
+}
+
 .gap-20rem{
     gap: 20rem;
+}
+
+.gap-30rem{
+    gap: 30rem;
+}
+
+.gap-40rem{
+    gap: 40rem;
 }
 
 /* ヘッダー */
@@ -90,6 +116,7 @@ input {
     position: fixed;
     top: 0;
     color: #fff;
+    z-index: 10;
 }
 
 .header__left{
@@ -201,5 +228,11 @@ input {
 /* 共通クラス */
 .font__bold{
     font-weight: bold;
+}
+
+.user__title--small{
+    padding: 5rem 10rem;
+    background: transparent;
+    border-left: solid 5px var(--dark-gray);
 }
 

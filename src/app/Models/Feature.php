@@ -9,7 +9,7 @@ class Feature extends Model
 {
     use HasFactory;
 
-    public function shopThumbnailFeature(){
-        return $this->belongsTo('App\Models\ShopThumbnailFeature');
+    public function shopFeature(){
+        return $this->belongsTo('App\Models\ShopFeature');
     }
 }

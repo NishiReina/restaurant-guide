@@ -20,19 +20,19 @@ class ChangeRequestSeeder extends Seeder
             'end_time' => '21:00',
             'min_price' => 10000,
             'max_price' => 15000,
-            'shop_important_id' => 1,
+            'shop_id' => 1,
         ]);
 
         ChangeRequest::create([
             'status' => 0,
             'area_id' => 1,
-            'shop_important_id' => 4
+            'shop_id' => 4
         ]);
 
         ChangeRequest::create([
             'status' => 0,
             'gunre_id' => 3,
-            'shop_important_id' => 6
+            'shop_id' => 6
         ]);
     }
 }

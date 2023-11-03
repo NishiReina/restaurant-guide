@@ -11,8 +11,8 @@ class Area extends Model
 
     protected $fillable = ['name'];
 
-    public function shopImportant(){
-        return $this->belongsTo('App\Models\ShopImportant');
+    public function shop(){
+        return $this->belongsTo('App\Models\Shop');
     }
 
     public function region(){

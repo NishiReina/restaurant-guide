@@ -16,10 +16,12 @@ class PickupSeeder extends Seeder
     {
         Pickup::create([
             'review_id' => 1,
+            'shop_id' => 1,
         ]);
 
         Pickup::create([
             'review_id' => 3,
+            'shop_id' => 1,
         ]);
     }
 }

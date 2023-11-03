@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Region;
 use App\Models\Feature;
 use App\Models\Shop;
+use App\Models\Pickup;
 
 class RestaurantGuideController extends Controller
 {
@@ -16,7 +17,6 @@ class RestaurantGuideController extends Controller
     }
 
     public function detail(Shop $shop){
-        
         return view('detail', compact('shop'));
     }
 }

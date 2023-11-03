@@ -27,8 +27,8 @@ class CreateChangeRequestsTable extends Migration
             $table->foreign('area_id')->references('id')->on('areas');
             $table->unsignedBigInteger('gunre_id')->nullable();
             $table->foreign('gunre_id')->references('id')->on('gunres');
-            $table->unsignedBigInteger('shop_important_id')->unique();
-            $table->foreign('shop_important_id')->references('id')->on('shop_importants');
+            $table->unsignedBigInteger('shop_id')->unique();
+            $table->foreign('shop_id')->references('id')->on('shops');
             $table->timestamps();
         });
     }

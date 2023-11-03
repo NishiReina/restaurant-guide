@@ -79,11 +79,20 @@ class Shop extends Authenticatable
         return $this->belongsTo('App\Models\Gunre');
     }
 
-    public function ShopFeature(){
+    public function ShopFeatures(){
         return $this->hasMany('App\Models\ShopFeature');
     }
     
     public function shopRests(){
         return $this->hasMany('App\Models\ShopRest');
     }
+
+    public function reviews(){
+        return $this->hasMany('App\Models\Review');
+    }
+
+    public function pickups(){
+        return $this->hasMany('App\Models\Pickup');
+    }
+
 }

@@ -16,6 +16,7 @@ class CreatePickupsTable extends Migration
         Schema::create('pickups', function (Blueprint $table) {
             $table->id();
             $table->foreignId('review_id')->constrained();
+            $table->foreignId('shop_id')->constrained();
             $table->timestamps();
         });
     }

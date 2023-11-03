@@ -13,13 +13,11 @@ class DetailAll extends Component
      * @return void
      */
 
-    public $name;
-    public $phone;
+    public $shop;
 
     public function __construct(Shop $shop)
     {
-        $this->name = $shop->name;
-        $this->phone = $shop->phone;
+        $this->shop = $shop;
     }
 
     /**
