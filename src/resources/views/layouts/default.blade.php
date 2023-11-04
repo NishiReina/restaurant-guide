@@ -11,7 +11,7 @@
     @stack('js')
 </head>
 <body>
-    <header class="header flex_row_space-between">
+    <header class="header flex_row_space-between align__items--center">
         <div class="header__left img">
             <img src="{{ asset('img/coachtech_white.png')}}" alt="コーチテックロゴ">
         </div>

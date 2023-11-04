@@ -25,9 +25,9 @@
             <div class="shopMain flex_row_space-between">
                 <div class="shopMain__right">
                     <h2 class="shop__name">{{$shop->name}}</h2>
-                    <div class="rate-wrap"><span class="rate" style ="--score: {{ 1.5 }}"></span><span class="num">3.5</span></div>
+                    <div class="rate-wrap"><span class="rate" style ="--score: {{ 1.5 }}"></span><span class="rate__num">3.5</span></div>
                 </div>
-                <form action="" method="post" class="shopMain__left flex_row_space-between">
+                <form action="" method="post" class="shopMain__left flex_row_space-between align__items--center">
                     @csrf
                     <div class="shop__save"><img src="../img/bookmark-off.png" alt=""></div>
                     <button class="shop__save--btn">保存</button>
@@ -57,7 +57,7 @@
             <x-detail-callender></x-detail-callender>
         </div>
         <div class="tab_content flex_row_space-between" id="review_content">
-            <x-detail-review></x-detail-review>
+            <x-detail-review :shop="$shop"></x-detail-review>
             <x-detail-callender></x-detail-callender>
         </div>
     </div>

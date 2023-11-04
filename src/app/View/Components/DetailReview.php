@@ -3,6 +3,7 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
+use App\Models\Shop;
 
 class DetailReview extends Component
 {
@@ -11,9 +12,10 @@ class DetailReview extends Component
      *
      * @return void
      */
-    public function __construct()
+    public $shop;
+    public function __construct(Shop $shop)
     {
-        //
+        $this->shop = $shop;
     }
 
     /**

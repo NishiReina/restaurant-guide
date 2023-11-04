@@ -87,12 +87,20 @@ class Shop extends Authenticatable
         return $this->hasMany('App\Models\ShopRest');
     }
 
-    public function reviews(){
-        return $this->hasMany('App\Models\Review');
+    public function reservations(){
+        return $this->hasMany('App\Models\Reservation');
     }
 
     public function pickups(){
         return $this->hasMany('App\Models\Pickup');
+    }
+
+    public function getReviews(){
+        $reviews = [];
+        foreach($this->reservations as $resevation){
+            array_push($reviews, $resevation->review);
+        }
+        return $reviews;
     }
 
 }

@@ -43,7 +43,7 @@
         <div class="review__wrap">
             <div class="review__user">
                 <span class="user__img">
-                    @if($pickup->review->user->img_url)
+                    @if($pickup->review->user->profile->img_url)
                     <img src="{{ \Storage::url($pickup->review->user->profile->img_url) }}" alt="">
                     @else
                     <img src="{{ asset('img/user.png') }}" alt="">

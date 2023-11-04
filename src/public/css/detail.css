@@ -63,41 +63,6 @@ input[name="tab_item"] {
     color: #fff;
 }
 
-.rate {
-    position: relative;
-    display: inline-block;
-    width: 150rem;
-    height: 30rem; 
-    font-size: 30rem;
-}
-
-.rate::before,
-.rate::after {
-    position: absolute;
-    display: inline-block;
-    height: 30rem;
-    content: "★★★★★";
-    line-height: 30rem;
-}
-.rate::before {
-    color: #c4c4c4;
-}
-.rate::after {
-    overflow: hidden;
-    width: calc(var(--score) * 30rem);
-    color: #ffb906;
-}
-.rate-wrap {
-    display: flex;
-    width: 330rem;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5rem;
-    border: 1.5rem solid #e8d8b0;
-    margin: 20rem auto 0;
-    font-weight: bold;
-    }
-
 .shop{
     padding-top: 100rem;
 }
@@ -111,13 +76,20 @@ input[name="tab_item"] {
 }
 
 .shopMain__left{
-    width: 80rem;
+    width: 70rem;
+    height: 30rem;
+    font-weight: bold;
+    color: var(--dark-gray);
     border: 2px solid var(--dark-gray);
     padding: 5rem;
 }
 
 .shop__save{
     width: 15rem;
+}
+
+.shop__save img{
+    vertical-align: middle;
 }
 
 /* .shop__save--btn{
@@ -231,6 +203,31 @@ input[name="tab_item"] {
 .review__content{
     line-height: 1.5;
     font-weight: bold;
+}
+
+/* 口コミコンポーネント */
+
+.detail__review{
+    width: 65%;
+}
+
+.detail__review__wrap{
+    border: 1.5rem solid var(--border-light-gray);
+    border-radius: 10rem;
+}
+
+.detail__review__user{
+    border-bottom: 1.5rem solid var(--border-light-gray);
+    padding: 10rem;
+}
+
+.detail__rate{
+    border-bottom: 1.5rem solid var(--border-light-gray);
+    padding: 5rem 10rem;
+}
+
+.detail__review-text{
+    padding: 20rem;
 }
 
 /* callender */

@@ -47,13 +47,13 @@ input {
 .flex_row_space-between{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .flex_row_space-around{
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .flex_row_center{
@@ -65,7 +65,7 @@ input {
 .flex_row_start{
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .flex_column{
@@ -77,13 +77,16 @@ input {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
 .flex_wrap_center{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.align__items--center{
+    align-items: center;
 }
 
 /* フレックス gap */
@@ -216,7 +219,7 @@ input {
 }
 .rate-wrap {
     display: flex;
-    width: 330rem;
+    width: 250rem;
     align-items: center;
     justify-content: space-between;
     padding: 5rem;
