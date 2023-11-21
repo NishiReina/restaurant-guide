@@ -2,10 +2,12 @@
 :root {
     --point-blue: #5ab4bd;
     --border-gray: #F5F5F5;
+    --border-dark-gray: #d9d9d9;
     --backgroud-gray: #d9d9d9;
+    --backgroud-light-gray: #F5F5F5;
     --dark-gray: #565656;
-
   }
+
 
 *{
     box-sizing: border-box;
@@ -43,29 +45,29 @@ input {
     margin: 0 auto;
 }
 
+.hr{
+    margin: 50rem 0;   
+}
+
 /* flex */
 .flex_row_space-between{
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
 }
 
 .flex_row_space-around{
     display: flex;
     justify-content: space-around;
-    /* align-items: center; */
 }
 
 .flex_row_center{
     display: flex;
     justify-content: center;
-    /* align-items: center; */
 }
 
 .flex_row_start{
     display: flex;
     justify-content: flex-start;
-    /* align-items: center; */
 }
 
 .flex_column{
@@ -87,6 +89,10 @@ input {
 
 .align__items--center{
     align-items: center;
+}
+
+.justify__center{
+    justify-content: center;
 }
 
 /* フレックス gap */
@@ -177,7 +183,16 @@ input {
 }
 
 .search__input::placeholder {
-	text-align: center;
+    text-align: center;
+}
+
+.search__select{
+    width: 25%;
+    height: 50rem;
+    background-color: #fff;
+    padding: 10rem;
+    border-right: 1px solid rbga(0,0,0,0.5);
+    text-align: center;
 }
 
 .search__btn{
@@ -226,7 +241,45 @@ input {
     border: 1.5rem solid #e8d8b0;
     margin: 20rem auto 0;
     font-weight: bold;
-    }
+}
+
+/* 小さめ評価（commonに移すかも） */
+.small__rate {
+    position: relative;
+    display: inline-block;
+    width: 100rem;
+    height: 20rem; 
+    font-size: 20rem;
+}
+
+.small__rate::before,
+.small__rate::after {
+    position: absolute;
+    display: inline-block;
+    content: "★★★★★";
+    height: 20rem;
+    line-height: 20rem;
+}
+
+.small__rate::before {
+    color: #c4c4c4;
+}
+
+.small__rate::after {
+    overflow: hidden;
+    width: calc(var(--score) * 20rem);
+    color: #ffb906;
+}
+.small__rate-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20rem auto 0;
+    font-weight: bold;
+    font-size: 14rem;
+    width: 135rem;
+    margin: 0;
+}
 
 /* 共通クラス */
 .font__bold{
@@ -238,4 +291,6 @@ input {
     background: transparent;
     border-left: solid 5px var(--dark-gray);
 }
+
+
 

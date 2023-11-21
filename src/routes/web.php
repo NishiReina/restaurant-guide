@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [RestaurantGuideController::class, 'top']);
+Route::get('/shoplist', [RestaurantGuideController::class, 'shopList'])->name('shoplist');
 Route::get('/detail/{shop}', [RestaurantGuideController::class, 'detail']);
 
 Route::get('shop/register', [ShopRegisterController::class, 'create'])->name('admin.register');

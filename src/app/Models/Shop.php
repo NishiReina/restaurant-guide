@@ -103,4 +103,32 @@ class Shop extends Authenticatable
         return $reviews;
     }
 
+    public function getAvgStar(){
+        $reviews = $this->getReviews();
+        $num = 0;
+        if(count($reviews) == 0){
+            return 0;
+        }
+        foreach($reviews as $review){
+            if($review){
+               $num += $review->star;
+            }
+        }
+        return round($num/count($reviews), 1);
+    }
+
+    public static function sortByReveiwCount($shops){
+        foreach($shops as $shop){
+            $shop['count'] = count($shop->getReviews());
+        }
+        return $shops->sortByDesc('count');
+    }
+
+    public static function sortByReveiwStar($shops){
+        foreach($shops as $shop){
+            $shop['star'] = $shop->getAvgStar();
+        }
+        return $shops->sortByDesc('star');
+    }
+
 }

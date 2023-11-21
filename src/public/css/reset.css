@@ -58,6 +58,7 @@ a {
 margin:0;
 padding:0;
 font-size:100%;
+color: inherit;
 vertical-align:baseline;
 background:transparent;
 text-decoration: none;
@@ -120,3 +121,17 @@ button {
     color: inherit;
     background: none
 }
+
+select {
+    /* -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none; */
+    border-radius: 0;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    background: none transparent;
+    vertical-align: middle;
+    font-size: inherit;
+    color: inherit;
+  }

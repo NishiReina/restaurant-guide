@@ -19,7 +19,7 @@
             <div class="area">
                 <div class="region">{{$region->name}}</div>
                 @foreach($region->areas as $area)
-                <a class="prefecture" href="">{{$area->name}}</a>
+                <a class="prefecture" href="/shoplist?area_id={{$area->id}}">{{$area->name}}</a>
                 @endforeach
             </div>
             @endforeach

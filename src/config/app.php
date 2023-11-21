@@ -177,6 +177,7 @@ return [
         App\Providers\FortifyServiceProvider::class,
         App\Providers\AdminLoginServiceProvider::class,
         App\Providers\ShopLoginServiceProvider::class,
+        App\Providers\ViewComposerServiceProvider::class,
     ],
 
     /*
