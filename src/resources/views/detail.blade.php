@@ -3,11 +3,17 @@
 @section('title', '店舗詳細ページ')
 
 @push('css')
+<link href='{{ asset("fullcalendar-6.1.9/dist/main.css") }}' rel='stylesheet' />
 <link rel="stylesheet" type="text/css" href="{{ asset('css/detail.css')}}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/detail_all.css')}}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/detail_photo.css')}}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/detail_review.css')}}">
-<link rel="stylesheet" type="text/css" href="{{ asset('css/detail_callender.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/detail_calendar.css')}}">
+@endpush
+
+@push('css')
+<script src='{{ asset("fullcalendar-6.1.9/dist/index.global.js") }}'></script>
+<!-- <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script> -->
 @endpush
 
 @section('content')
@@ -50,15 +56,15 @@
         </section>
         <div class="tab_content flex_row_space-between" id="all_content">
             <x-detail-all :shop="$shop"></x-detail-all>
-            <x-detail-callender></x-detail-callender>
+            <x-detail-calendar :shop="$shop" :calendar="$calendar"></x-detail-calendar>
         </div>
         <div class="tab_content flex_row_space-between" id="photo_content">
             <x-detail_photo></x-detail_photo>
-            <x-detail-callender></x-detail-callender>
+            <x-detail-calendar :shop="$shop" :calendar="$calendar"></x-detail-calendar>
         </div>
         <div class="tab_content flex_row_space-between" id="review_content">
             <x-detail-review :shop="$shop"></x-detail-review>
-            <x-detail-callender></x-detail-callender>
+            <x-detail-calendar :shop="$shop" :calendar="$calendar"></x-detail-calendar>
         </div>
     </div>
 </div>

@@ -10,6 +10,7 @@ use App\Models\Area;
 use App\Models\Gunre;
 use App\Models\Pickup;
 use Carbon\Carbon;
+use App\Calendar\CalendarView;
 
 class RestaurantGuideController extends Controller
 {
@@ -19,8 +20,25 @@ class RestaurantGuideController extends Controller
         return view('top', compact('regions', 'features'));
     }
 
-    public function detail(Shop $shop){
-        return view('detail', compact('shop'));
+    public function detail(Shop $shop, Request $request){
+        
+        // クエリーのdateを受け取る
+		$date = $request->input("date");
+
+		// dateがYYYY-MMの形式かどうか判定する
+		if($date && preg_match("/^[0-9]{4}-[0-9]{2}$/", $date)){
+			$date = strtotime($date."-01");
+		}else{
+			$date = null;
+		}
+
+        //取得出来ない時は現在(=今月)を指定する
+		if(!$date)$date = time();
+		
+		//カレンダーに渡す
+        $calendar = new CalendarView($date);
+
+        return view('detail', compact('shop', 'calendar'));
     }
 
     public function shopList(Request $request){
