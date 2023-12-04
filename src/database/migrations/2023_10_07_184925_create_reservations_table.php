@@ -17,7 +17,8 @@ class CreateReservationsTable extends Migration
             $table->id();
             $table->unsignedSmallInteger('status')->default(0);
             $table->unsignedSmallInteger('number');
-            $table->timestamp('datetime');
+            $table->date('date');
+            $table->time('time');
             $table->foreignId('user_id')->constrained();
             $table->foreignId('shop_id')->constrained();
             $table->timestamps();

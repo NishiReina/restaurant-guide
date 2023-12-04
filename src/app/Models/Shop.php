@@ -98,7 +98,9 @@ class Shop extends Authenticatable
     public function getReviews(){
         $reviews = [];
         foreach($this->reservations as $resevation){
-            array_push($reviews, $resevation->review);
+            if($resevation->review){
+                array_push($reviews, $resevation->review);
+            }
         }
         return $reviews;
     }

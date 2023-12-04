@@ -3,17 +3,11 @@
 @section('title', '店舗詳細ページ')
 
 @push('css')
-<link href='{{ asset("fullcalendar-6.1.9/dist/main.css") }}' rel='stylesheet' />
 <link rel="stylesheet" type="text/css" href="{{ asset('css/detail.css')}}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/detail_all.css')}}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/detail_photo.css')}}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/detail_review.css')}}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/detail_calendar.css')}}">
-@endpush
-
-@push('css')
-<script src='{{ asset("fullcalendar-6.1.9/dist/index.global.js") }}'></script>
-<!-- <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script> -->
 @endpush
 
 @section('content')

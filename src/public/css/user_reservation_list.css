@@ -1,0 +1,87 @@
+:root {
+    --point-blue: #5ab4bd;
+    --border-gray: #F5F5F5;
+    --border-dark-gray: #d9d9d9;
+    --backgroud-gray: #d9d9d9;
+    --backgroud-light-gray: #F5F5F5;
+    --dark-gray: #565656;
+  }
+
+.reservation{
+    width: 100%;
+    border: 1px solid var(--border-dark-gray);
+    margin-top: 50rem;
+}
+
+.reservation__status{
+    border-bottom: 1px solid var(--border-dark-gray);
+    padding: 10rem 20rem;
+}
+
+.reservation__status0{
+    width: 100rem;
+    color: #fff;
+    font-size: 14rem;
+    font-weight: bold;
+    background-color: #000;
+    border: 1px solid #000;
+    border-radius: 5rem;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.reservation__status1{
+    width: 100rem;
+    color: #000;
+    font-size: 14rem;
+    font-weight: bold;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5rem;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.reservation__status2{
+    width: 100rem;
+    color: #fff;
+    font-size: 14rem;
+    font-weight: bold;
+    background-color: var(--backgroud-gray);
+    border: 1px solid var(--backgroud-gray);
+    border-radius: 5rem;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.reservation__shop{
+    padding: 20rem;
+}
+
+.shop__img{
+    display: inline-block;
+    width: 120rem;
+    height: 120rem;
+}
+
+.shop__img img{
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.shop__name{
+    font-size: 18rem;
+}
+
+.reserve__column{
+    display: inline-block;
+    background-color: var(--backgroud-light-gray);
+    padding: 5rem;
+    margin-right: 20rem;
+}
+
+.reserve__value{
+    display: inline-block;
+}
+

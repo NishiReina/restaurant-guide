@@ -42,7 +42,7 @@ input {
 
 .container{
     width: 900rem;
-    margin: 0 auto;
+    margin: 100rem auto 0;
 }
 
 .hr{
@@ -290,6 +290,13 @@ input {
     padding: 5rem 10rem;
     background: transparent;
     border-left: solid 5px var(--dark-gray);
+}
+
+.pate__title{
+    font-size: 24rem;
+    border-top: 3px solid var(--dark-gray);
+    border-bottom: 3px solid var(--dark-gray);
+    padding: 10rem;
 }
 
 

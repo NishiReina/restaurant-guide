@@ -18,7 +18,8 @@ class ReservationSeeder extends Seeder
         Reservation::create([
             'status' => 0,
             'number' => 2,
-            'datetime' => new DateTime(),
+            'date' => "2023-12-01",
+            'time' => "10:00",
             'user_id' => 1,
             'shop_id' => 1,
         ]);
@@ -26,7 +27,8 @@ class ReservationSeeder extends Seeder
         Reservation::create([
             'status' => 1,
             'number' => 2,
-            'datetime' => new DateTime(),
+            'date' => "2023-12-01",
+            'time' => "10:00",
             'user_id' => 2,
             'shop_id' => 1,
         ]);
@@ -34,7 +36,8 @@ class ReservationSeeder extends Seeder
         Reservation::create([
             'status' => 0,
             'number' => 1,
-            'datetime' => new DateTime(),
+            'date' => "2023-12-01",
+            'time' => "10:00",
             'user_id' => 3,
             'shop_id' => 3,
         ]);
@@ -42,7 +45,8 @@ class ReservationSeeder extends Seeder
         Reservation::create([
             'status' => 1,
             'number' => 1,
-            'datetime' => new DateTime(),
+            'date' => "2023-12-01",
+            'time' => "10:00",
             'user_id' => 1,
             'shop_id' => 3,
         ]);
@@ -50,7 +54,8 @@ class ReservationSeeder extends Seeder
         Reservation::create([
             'status' => 1,
             'number' => 1,
-            'datetime' => new DateTime(),
+            'date' => "2023-12-01",
+            'time' => "10:00",
             'user_id' => 2,
             'shop_id' => 3,
         ]);
@@ -58,7 +63,8 @@ class ReservationSeeder extends Seeder
         Reservation::create([
             'status' => 1,
             'number' => 1,
-            'datetime' => new DateTime(),
+            'date' => "2023-12-01",
+            'time' => "10:00",
             'user_id' => 1,
             'shop_id' => 8,
         ]);
@@ -66,7 +72,8 @@ class ReservationSeeder extends Seeder
         Reservation::create([
             'status' => 1,
             'number' => 1,
-            'datetime' => new DateTime(),
+            'date' => "2023-12-01",
+            'time' => "10:00",
             'user_id' => 2,
             'shop_id' => 19,
         ]);

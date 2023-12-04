@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Shop\ShopLoginController;
 use App\Http\Controllers\Shop\ShopRegisterController;
 use App\Http\Controllers\RestaurantGuideController;
+use App\Http\Controllers\ReserveController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,6 +46,8 @@ Route::prefix('shop')->group(function () {
 });
 
 
-Route::middleware(['auth:web', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth:web', 'verified'])->group( function () {
+    Route::post('reserve', [ReserveController::class, 'reserve']);
+    Route::get('reserve_list', [ReserveController::class, 'getUserReservations']);
+    Route::get('reserve/{reserve}', [ReserveController::class, 'detailReservation']);
+});

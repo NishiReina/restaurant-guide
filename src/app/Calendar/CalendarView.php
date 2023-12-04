@@ -83,7 +83,6 @@ class CalendarView {
 		$html[] = '</thead>';
 
 		$html[] = '<tbody>';
-		
 		$weeks = $this->getWeeks();
 		foreach($weeks as $week){
 			$html[] = '<tr class="'.$week->getClassName().'">';
@@ -95,7 +94,6 @@ class CalendarView {
 			}
 			$html[] = '</tr>';
 		}
-		
 		$html[] = '</tbody>';
 
 		$html[] = '</table>';

@@ -5,7 +5,7 @@ use Carbon\Carbon;
 
 class CalendarWeek {
 
-	protected $carbon;
+	public $carbon;
 	protected $index = 0;
 
 	function __construct($date, $index = 0){
