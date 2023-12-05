@@ -281,6 +281,30 @@ input {
     margin: 0;
 }
 
+/* 表 */
+.simple__table{
+    margin-top: 30rem;
+    width: 100%;
+}
+
+.simple__table tr{
+    border-bottom: 1px solid var(--border-dark-gray);
+}
+
+.simple__table tr:first-child{
+    border-top: 1px solid var(--border-dark-gray);
+}
+
+.simple__table th {
+    width: 30%;
+    padding: 20rem;
+    background-color: var(--backgroud-light-gray);
+}
+
+.simple__table td {
+    text-align: center;
+}
+
 /* 共通クラス */
 .font__bold{
     font-weight: bold;
@@ -292,11 +316,17 @@ input {
     border-left: solid 5px var(--dark-gray);
 }
 
-.pate__title{
+.page__title{
     font-size: 24rem;
     border-top: 3px solid var(--dark-gray);
     border-bottom: 3px solid var(--dark-gray);
     padding: 10rem;
+}
+
+.small__title{
+    border-left: 3px solid var(--dark-gray);
+    padding-left: 10rem;
+    margin-top: 50rem;
 }
 
 

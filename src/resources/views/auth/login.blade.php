@@ -7,6 +7,7 @@
 @endpush
 
 @section('content')
+<div class="container">
 <div class="auth flex_column_center">
 
 @if( isset($guard) && ($guard == 'admin'))
@@ -39,5 +40,6 @@
 </form>
 <a href="/register" class="auth__link">新規登録はこちら</a>
 
+</div>
 </div>
 @endsection

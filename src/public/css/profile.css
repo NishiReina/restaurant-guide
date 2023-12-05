@@ -1,0 +1,50 @@
+:root {
+    --point-blue: #5ab4bd;
+    --border-gray: #F5F5F5;
+    --border-dark-gray: #d9d9d9;
+    --backgroud-gray: #d9d9d9;
+    --backgroud-light-gray: #F5F5F5;
+    --dark-gray: #565656;
+  }
+
+
+.user__img{
+    display: inline-block;
+    width: 150rem;
+    height: 150rem;
+    margin-top: 30rem;
+}
+
+.user__img img{
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    vertical-align: middle;
+}
+
+.edit__img{
+    display: block;
+    border: 1px solid #000;
+    border-radius: 10rem;
+    width: 120rem;
+    height: 30rem;
+    text-align: center;
+    line-height: 30rem;
+}
+
+.edit__img:hover{
+    cursor: pointer;
+}
+
+.edit__img input{
+    display: none;
+}
+
+.simple__table td input{
+    display: inline-block;
+    width: 90%;
+    padding: 10rem;
+    border: 1px solid var(--border-dark-gray);
+    border-radius: 5rem;
+    text-align: center;
+}

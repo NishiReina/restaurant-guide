@@ -9,7 +9,7 @@
 @section('content')
 <section class="reservation_list">
     <div class="container">
-    <h1 class="pate__title">予約一覧</h1>
+    <h1 class="page__title">予約一覧</h1>
     <div class="reservations">
         @foreach ($reservations as $reservation)
         <div class="reservation">

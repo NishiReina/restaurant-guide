@@ -7,6 +7,7 @@ use App\Http\Controllers\Shop\ShopLoginController;
 use App\Http\Controllers\Shop\ShopRegisterController;
 use App\Http\Controllers\RestaurantGuideController;
 use App\Http\Controllers\ReserveController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,5 +50,6 @@ Route::prefix('shop')->group(function () {
 Route::middleware(['auth:web', 'verified'])->group( function () {
     Route::post('reserve', [ReserveController::class, 'reserve']);
     Route::get('reserve_list', [ReserveController::class, 'getUserReservations']);
-    Route::get('reserve/{reserve}', [ReserveController::class, 'detailReservation']);
+    Route::get('reserve/{reservation}', [ReserveController::class, 'detailReservation']);
+    Route::get('profile', [UserController::class, 'getProfile']);
 });
