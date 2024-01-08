@@ -15,20 +15,25 @@
         <div class="header__left img">
             <img src="{{ asset('img/coachtech_white.png')}}" alt="コーチテックロゴ">
         </div>
-        @if(Auth::guard('admin')->check())
         <div class="header__right flex_row_center">
+        @if(Auth::guard('admin')->check())
+            <form action="/admin/logout" method="post">
+                @csrf
+                <button class="btn">ログアウト</button>
+            </form>
+        </div>
+        @elseif(Auth::guard('shop')->check())
+            <form action="/shop/logout" method="post">
+                @csrf
+                <button class="btn">ログアウト</button>
+            </form>
+        @else
             <form action="/logout" method="post">
                 @csrf
                 <button class="btn">ログアウト</button>
             </form>
-        </div>
-        @else
-        <div class="header__right flex_row_center">
-                @csrf
-                <button class="btn">ログアウト</button>
-            </form>
-        </div>
         @endif
+        </div>
     </header>
     @yield('content')
     <footer class="footer"></footer>

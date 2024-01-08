@@ -33,7 +33,8 @@ Route::prefix('admin')->group(function () {
     Route::post('login', [AdminLoginController::class, 'store']);
 
     Route::middleware('auth:admin')->group(function () {
-        Route::get('dashboard', [AdminController::class, 'index']);
+        Route::get('/request/list', [AdminController::class, 'getRequestList']);
+        Route::post('/request/approve/{change_request}', [AdminController::class, 'approveRequest']);
     });
 });
 
@@ -42,7 +43,16 @@ Route::prefix('shop')->group(function () {
     Route::post('login', [ShopLoginController::class, 'store']);
 
     Route::middleware('auth:shop')->group(function () {
-        Route::get('dashboard', [ShopController::class, 'index']);
+        Route::get('/', [ShopController::class, 'index']);
+        Route::get('/important', [ShopController::class, 'importantInfo'])->name('shop.important');
+        Route::get('/important/edit', [ShopController::class, 'editImportantInfo']);
+        Route::post('/important/request', [ShopController::class, 'requestUpdateImportantInfo']);
+        Route::get('/important/request/list', [ShopController::class, 'getChangeRequestList']);
+    });
+
+    // 自店舗以外の変更依頼にアクセス禁止
+    Route::middleware(['auth:shop,admin'])->group( function () {
+        Route::get('/request/detail/{change_request}', [ShopController::class, 'getRequestDetail'])->middleware('specific.shop')->name('request_detail');
     });
 });
 
@@ -53,3 +63,4 @@ Route::middleware(['auth:web', 'verified'])->group( function () {
     Route::get('reserve/{reservation}', [ReserveController::class, 'detailReservation']);
     Route::get('profile', [UserController::class, 'getProfile']);
 });
+

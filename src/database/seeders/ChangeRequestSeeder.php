@@ -15,24 +15,45 @@ class ChangeRequestSeeder extends Seeder
     public function run()
     {
         ChangeRequest::create([
-            'status' => 0,
-            'start_time' => '11:00',
-            'end_time' => '21:00',
-            'min_price' => 10000,
-            'max_price' => 15000,
+            'name' => "change1",
+            'phone' => "01234567890",
+            'postcode' => "1234567",
+            'address' => "test県test市",
+            'start_time' => "11:00",
+            'end_time' => "20:00",
+            'min_price' => 1000,
+            'max_price' => 2000,
+            'area_id' => 13,
+            'gunre_id' => 2,
             'shop_id' => 1,
         ]);
 
         ChangeRequest::create([
-            'status' => 0,
-            'area_id' => 1,
-            'shop_id' => 4
+            'name' => "change2",
+            'phone' => "01234567890",
+            'postcode' => "1234567",
+            'address' => "test県test市",
+            'start_time' => "11:00",
+            'end_time' => "20:00",
+            'min_price' => 1000,
+            'max_price' => 2000,
+            'area_id' => 13,
+            'gunre_id' => 2,
+            'shop_id' => 2,
         ]);
 
         ChangeRequest::create([
-            'status' => 0,
-            'gunre_id' => 3,
-            'shop_id' => 6
+            'name' => "change3",
+            'phone' => "01234567890",
+            'postcode' => "1234567",
+            'address' => "test県test市",
+            'start_time' => "11:00",
+            'end_time' => "20:00",
+            'min_price' => 1000,
+            'max_price' => 2000,
+            'area_id' => 13,
+            'gunre_id' => 2,
+            'shop_id' => 3,
         ]);
     }
 }

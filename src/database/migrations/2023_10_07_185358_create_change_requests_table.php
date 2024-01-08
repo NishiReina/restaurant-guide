@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+
 class CreateChangeRequestsTable extends Migration
 {
     /**
@@ -15,7 +16,7 @@ class CreateChangeRequestsTable extends Migration
     {
         Schema::create('change_requests', function (Blueprint $table) {
             $table->id();
-            $table->unsignedSmallInteger('status')->default(0);
+            $table->string('name')->nullable();
             $table->string('phone')->nullable();
             $table->char('postcode', 7)->nullable();
             $table->string('address')->nullable();
@@ -29,6 +30,7 @@ class CreateChangeRequestsTable extends Migration
             $table->foreign('gunre_id')->references('id')->on('gunres');
             $table->unsignedBigInteger('shop_id')->unique();
             $table->foreign('shop_id')->references('id')->on('shops');
+            $table->softDeletes()->nullable();
             $table->timestamps();
         });
     }

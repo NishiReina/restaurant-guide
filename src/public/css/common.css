@@ -34,9 +34,9 @@ input {
 	border: none;
 	border-radius: 0;
 	outline: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
+	/* -webkit-appearance: none; */
+	/* -moz-appearance: none; */
+	/* appearance: none; */
     display: inline-block;
 }
 
@@ -166,6 +166,24 @@ input {
     transition: .3s;
 }
 
+.simple__btn{
+    display: block;
+    width: 150rem;
+    padding: 10rem 0;
+    text-align: center;
+    background-color: var(--backgroud-gray);
+    border-radius: 4rem;
+    box-shadow: 0 4rem 4rem 0 rgba(0, 0, 0, 0.25);
+    font-weight: bold;
+    margin: 30rem 0 0 auto;
+}
+
+.simple__btn:hover{
+    transform: translate(0,4rem);
+    box-shadow: none;
+    transition: .2s;
+}
+
 /* 検索バー */
 .search{
     width: 900rem;
@@ -201,6 +219,35 @@ input {
     background-color: #000;
     color: #fff;
     text-align: center;
+}
+
+/* 店舗管理画面　共通クラスmain */
+
+.main__left{
+    width: 15%;
+    background-color: #000;
+    color: #fff; 
+    padding: 100rem 20rem;
+    height: 100vh;
+    top: 0;
+    position: fixed;
+}
+
+.main__left li {
+    line-height: 2;
+}
+
+.main__left ul {
+    margin-bottom: 30rem;
+}
+
+.sidebar__list2 {
+    padding-left: 20rem;
+}
+
+.main__right{
+    width: 85%;
+    margin-left: 15%;
 }
 
 /* 星評価 */
@@ -243,7 +290,7 @@ input {
     font-weight: bold;
 }
 
-/* 小さめ評価（commonに移すかも） */
+/* 小さめ評価 */
 .small__rate {
     position: relative;
     display: inline-block;
@@ -302,6 +349,71 @@ input {
 }
 
 .simple__table td {
+    text-align: center;
+}
+
+.excel__table{
+    margin-top: 50rem;
+    width: 100%;
+}
+
+.excel__table th{
+    background-color: var(--backgroud-light-gray);
+    border: 2px solid var(--border-dark-gray);
+    padding: 10rem 20rem;
+}
+
+.excel__table th{
+    text-align: center;
+}
+
+.excel__table tr:first-child th{
+    text-align: left;
+}
+
+.excel__table td{
+    border: 2px solid var(--border-dark-gray);
+    text-align: center;
+    padding: 15rem 20rem;
+}
+
+.excel__table--border{
+    padding: 5rem 10rem;
+    border: 1px solid var(--border-dark-gray);
+    border-radius: 4rem;
+    margin: 0 20rem
+}
+
+.excel__table--rounded{
+    background-color: var(--backgroud-gray);
+    border-radius: 10rem;
+    padding: 5rem 10rem;
+    margin: 0 10rem;
+}
+
+.design__table{
+    margin-top: 30rem;
+    width: 100%;
+}
+
+.design__table tr{
+    border: 1px solid var(--border-dark-gray);
+    background-color: var(--backgroud-light-gray);
+}
+
+.design__table tr:nth-child(odd){
+    background-color: #fff;
+}
+
+
+.design__table th {
+    /* width: 30%; */
+    border: 1px solid var(--border-dark-gray);
+    padding: 20rem;
+}
+
+.design__table td {
+    border: 1px solid var(--border-dark-gray);
     text-align: center;
 }
 

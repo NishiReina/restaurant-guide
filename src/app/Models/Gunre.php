@@ -9,6 +9,6 @@ class Gunre extends Model
 {
     use HasFactory;
     public function shop(){
-        return $this->belongsTo('App\Models\Shop');
+        return $this->hasOne('App\Models\Shop');
     }
 }

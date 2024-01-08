@@ -1,0 +1,66 @@
+:root {
+    --point-blue: #5ab4bd;
+    --border-gray: #E1E1E1;
+    --border-light-gray: #828282;
+    --backgroud-gray: #d9d9d9;
+    --backgroud-light-gray: #F5F5F5;
+    --dark-gray: #565656;
+}
+
+/*タブ切り替え全体のスタイル*/
+.list_tabs {
+    margin-top: 50rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.list_tab_items label{
+    display: block;
+    padding: 10rem;
+}
+  
+  /*タブのスタイル*/
+.list_tab_item {
+    width: 100rem;
+    height: 50rem;
+    border-bottom: 3rem solid var(--backgroud-light-gray);
+    line-height: 50rem;
+    text-align: center;
+    color: var(--border-gray);
+    display: block;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    margin-top: 20rem;
+}
+
+.list_tab_item:hover {
+    opacity: 0.75;
+}
+  
+  /*ラジオボタンを全て消す*/
+input[name="tab_item"] {
+    display: none;
+}
+  
+/*タブ切り替えの中身のスタイル*/
+.list_tab_content {
+    display: none;
+    clear: both;
+    overflow: hidden;
+    padding: 50rem 0;
+}
+  
+  
+/*選択されているタブのコンテンツのみを表示*/
+#unapproval:checked ~ #unapproval_content,
+#approval:checked ~ #approval_content {
+    display: flex;
+}
+  
+/*選択されているタブのスタイルを変える*/
+.list_tabs input:checked + .list_tab_item {
+    border-bottom: 3rem solid var(--dark-gray);
+    color: var(--dark-gray)
+}
