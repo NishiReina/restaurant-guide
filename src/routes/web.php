@@ -25,9 +25,6 @@ Route::get('/', [RestaurantGuideController::class, 'top']);
 Route::get('/shoplist', [RestaurantGuideController::class, 'shopList'])->name('shoplist');
 Route::get('/detail/{shop}', [RestaurantGuideController::class, 'detail']);
 
-Route::get('shop/register', [ShopRegisterController::class, 'create'])->name('admin.register');
- Route::post('register', [ShopRegisterController::class, 'store']);
-
 Route::prefix('admin')->group(function () {
     Route::get('login', [AdminLoginController::class, 'create'])->name('admin.login');
     Route::post('login', [AdminLoginController::class, 'store']);
@@ -35,6 +32,9 @@ Route::prefix('admin')->group(function () {
     Route::middleware('auth:admin')->group(function () {
         Route::get('/request/list', [AdminController::class, 'getRequestList']);
         Route::post('/request/approve/{change_request}', [AdminController::class, 'approveRequest']);
+        Route::get('/shop/register', [ShopRegisterController::class, 'create'])->name('admin.register');
+        Route::post('/shop/register', [ShopRegisterController::class, 'store']);
+        Route::get('/shop/list', [AdminController::class, 'getShopList']);
     });
 });
 

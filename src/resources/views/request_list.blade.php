@@ -1,4 +1,8 @@
-@extends('layouts.shop_default')
+@if(Auth::guard('shop'))
+    @extends('layouts.shop_default')
+@else
+    @extends('layouts.default')
+@endif
 
 @section('title', '申請一覧ページ')
 

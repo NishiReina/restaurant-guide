@@ -50,4 +50,9 @@ class AdminController extends Controller
 
         return redirect()->route('shop.important',['shop', $shop->id]);
     }
+
+    public function getShopList(){
+        $shops = Shop::Paginate(5);
+        return view('admin.shop_list', compact('shops'));
+    }
 }
