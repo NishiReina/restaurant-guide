@@ -9,9 +9,15 @@ use App\Models\Shop;
 use App\Models\Rest;
 use App\Models\Gunre;
 use App\Models\Area;
+use App\Models\Feature;
+use App\Models\Reservation;
+use App\Models\ShopFeature;
 use App\Models\ChangeRequest;
 use App\Models\ShopRestRequest;
 use App\Http\Requests\ChangeRequestParameter;
+use Illuminate\Support\Facades\Storage;
+
+use Illuminate\Support\Carbon;
 
 class ShopController extends Controller
 {
@@ -81,4 +87,60 @@ class ShopController extends Controller
     public function getRequestDetail(ChangeRequest $change_request){
         return view('shop.request_detail', compact('change_request'));
     }
+
+    public function editInfo(){
+        $shop = Shop::find(Auth::id());
+        $features = Feature::all();
+
+        // こだわり登録をしたfeatureテーブルのidリスト
+        $feature_id_lists = [];
+        foreach( $shop->shopFeatures as $feature){
+            array_push($feature_id_lists, $feature->feature_id);
+        }
+        return view('shop.info_edit', compact('shop', 'features', 'feature_id_lists'));
+    }
+
+    public function updateInfo(Request $request){
+
+        $shop = Shop::find(Auth::id());
+        $img = $request->file('img_url');
+        try {
+            if($img){
+                $img_url = Storage::disk('local')->put('public/img', $img);
+            }else{
+                $img_url=$shop->img_url;
+            }
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+
+        Shop::find(Auth::id())->update([
+            'img_url' => $img_url,
+            'title' => $request->title,
+            'pr' => $request->pr,
+        ]);
+
+        // 定休日の変更申請依頼作成
+        // こだわりのデータをリセット
+        ShopFeature::where('shop_id', Auth::id())->delete();
+        foreach($request->features as $feature_id){
+            $exist = ShopFeature::where('shop_id', Auth::id())->where('feature_id', $feature_id)->exists();
+            if(!$exist){
+                ShopFeature::create([
+                    "shop_id" =>  Auth::id(),
+                    "feature_id" => $feature_id
+                ]);
+            }
+        }
+
+        return redirect('/shop/info/edit');
+    }
+
+    public function myShop(Request $request){
+
+         $shop = Shop::find(Auth::id());
+
+        return view('shop.myshop', compact('shop'));
+    }
+
 }

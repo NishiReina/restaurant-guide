@@ -6,6 +6,9 @@
     <div class="all__pr">
         {{$shop->pr}}
     </div>
+    @if(Auth::guard('shop')->check())
+    <a class="btn detail__all--link" href="/shop/info/edit">修正する</a>
+    @endif
     <hr>
     <div class="flex_column gap-30rem">
     <h3 class="user__title--small">店舗基本情報</h3>
@@ -35,6 +38,9 @@
             <td class="shopInfo__td">{{$shop->min_price}}~{{$shop->max_price}}</td>
         </tr>
     </table>
+    @if(Auth::guard('shop')->check())
+    <a class="btn detail__all--link" href="/shop/important/edit">修正する</a>
+    @endif
     </div>
     <hr>
     <div class="all__review flex_column gap-30rem">

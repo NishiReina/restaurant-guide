@@ -78,6 +78,6 @@ class RestaurantGuideController extends Controller
             ];
             array_push($week, $day);
         }
-        return view('shopList', compact('shops', 'request', 'week'));
+        return view('shoplist', compact('shops', 'request', 'week'));
     }
 }

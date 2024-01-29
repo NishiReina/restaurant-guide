@@ -64,6 +64,7 @@ input[name="sort"] {
 
 .shops{
     width: 100%;
+    position: relative;
 }
 
 .shop{
@@ -148,5 +149,37 @@ input[name="sort"] {
 .reservation__right--bottom span{
     display: block;
 }
+
+/* 予約モーダル */
+.reserve_modal{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: 400rem;
+    height: 500rem;
+    background-color: #fff;
+    border: 5px solid #000;
+    border-radius: 10rem;
+    padding: 30rem;
+}
+
+.modal__title{
+    font-size: 24rem;
+}
+
+.modal__field{
+    display: block;
+    font-size: 20rem;
+    margin-bottom: 30rem;
+    font-weight: bold;
+}
+
+.modal__input{
+    font-size: 20rem;
+}
+
 
 

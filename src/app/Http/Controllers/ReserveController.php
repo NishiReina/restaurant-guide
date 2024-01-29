@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\Models\Reservation;
+use App\Models\Shop;
 use App\Http\Requests\ReserveRequest;
 
 
@@ -30,6 +31,16 @@ class ReserveController extends Controller
     }
 
     public function detailReservation(Reservation $reservation){
-        return view('user.reservation_detail', compact('reservation'));
+        return view('reservation_detail', compact('reservation'));
     }
+
+    public function getShopReservationOfDay($date, Request $request){
+
+        $ymd = Carbon::parse($date);
+
+        $shop = Shop::find(Auth::id());
+        $reservations = Reservation::where('shop_id', $shop->id)->where('date',$ymd->toDateString())->get();
+
+       return view('shop.reservation_day', compact('reservations', 'ymd'));
+   }
 }

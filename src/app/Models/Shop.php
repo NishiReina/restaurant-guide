@@ -79,7 +79,7 @@ class Shop extends Authenticatable
         return $this->belongsTo('App\Models\Gunre');
     }
 
-    public function ShopFeatures(){
+    public function shopFeatures(){
         return $this->hasMany('App\Models\ShopFeature');
     }
     

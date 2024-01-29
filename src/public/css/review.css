@@ -1,0 +1,37 @@
+.shop__wrap{
+    margin-top: 30rem;
+}
+
+.review__page-title{
+    width: 100%;
+    color: #fff;
+    background-color: black;
+    padding: 10rem; 
+    margin: 30rem 0;  
+}
+
+.review__label{
+    display: block;
+    margin-bottom: 10rem;
+    font-weight: bold;
+}
+
+.review__input{
+    width: 100%;
+    height: 50rem;
+    border: 1rem solid #000;
+    border-radius: 8rem;
+    padding: 20rem;
+}
+
+.review__star{
+    border: 1rem solid #000;
+    padding: 10rem 20rem;
+}
+
+.review__text{
+    width: 100%;
+    border: 1rem solid #000;
+    border-radius: 8rem;
+    padding: 20rem;
+}

@@ -9,6 +9,14 @@ class Profile extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'img_url',
+        'gender',
+        'phone',
+        'address',
+        'birthday',
+    ];
+
     public function user(){
         return $this->belongsTo('App\Models\User');
     }

@@ -8,6 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Review extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'img_url',
+        'star',
+        'title',
+        'content',
+        'user_id',
+        'reservation_id',
+    ];
     
     public function user(){
         return $this->belongsTo('App\Models\User');

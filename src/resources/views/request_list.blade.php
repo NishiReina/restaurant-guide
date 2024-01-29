@@ -1,8 +1,4 @@
-@if(Auth::guard('shop'))
-    @extends('layouts.shop_default')
-@else
-    @extends('layouts.default')
-@endif
+@extends('layouts.default')
 
 @section('title', '申請一覧ページ')
 
@@ -15,11 +11,11 @@
     <div class="container">
         <h1 class="page__title">申請一覧</h1>
         <div class="list_tabs">
-            <input id="unapproval" type="radio" name="tab_item" checked>
-            <label class="list_tab_item" for="unapproval">未承認</label>
-            <input id="approval" type="radio" name="tab_item">
-            <label class="list_tab_item" for="approval">承認済み</label>
-            <div class="list_tab_content flex_row_space-between" id="unapproval_content">
+            <input id="tab1" type="radio" name="tab_item" checked>
+            <label class="list_tab_item" for="tab1">未承認</label>
+            <input id="tab2" type="radio" name="tab_item">
+            <label class="list_tab_item" for="tab2">承認済み</label>
+            <div class="list_tab_content flex_row_space-between" id="tab1_content">
                 <table class="design__table">
                     <tr>
                         <th></th>
@@ -39,7 +35,7 @@
                     @endforeach
                 </table>
             </div>
-            <div class="list_tab_content flex_row_space-between" id="approval_content">
+            <div class="list_tab_content flex_row_space-between" id="tab2_content">
                 <table class="design__table">
                     <tr>
                         <th></th>

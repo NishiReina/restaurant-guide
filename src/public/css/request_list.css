@@ -54,8 +54,9 @@ input[name="tab_item"] {
   
   
 /*選択されているタブのコンテンツのみを表示*/
-#unapproval:checked ~ #unapproval_content,
-#approval:checked ~ #approval_content {
+#tab1:checked ~ #tab1_content,
+#tab2:checked ~ #tab2_content,
+#tab3:checked ~ #tab3_content {
     display: flex;
 }
   

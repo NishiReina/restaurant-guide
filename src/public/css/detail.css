@@ -230,3 +230,8 @@ input[name="tab_item"] {
 .callender{
     width: 30%;
 }
+
+/* shopアカウントがログイン中に表示される修正ボタン */
+.detail__all--link{
+    
+}

@@ -44,10 +44,14 @@ Route::prefix('shop')->group(function () {
 
     Route::middleware('auth:shop')->group(function () {
         Route::get('/', [ShopController::class, 'index']);
+        Route::get('/myshop', [ShopController::class, 'myShop']);
         Route::get('/important', [ShopController::class, 'importantInfo'])->name('shop.important');
         Route::get('/important/edit', [ShopController::class, 'editImportantInfo']);
         Route::post('/important/request', [ShopController::class, 'requestUpdateImportantInfo']);
         Route::get('/important/request/list', [ShopController::class, 'getChangeRequestList']);
+        Route::get('/info/edit', [ShopController::class, 'editInfo']);
+        Route::post('/info/edit', [ShopController::class, 'updateInfo']);
+        Route::get('/reservation/{date}', [ReserveController::class, 'getShopReservationOfDay']);
     });
 
     // 自店舗以外の変更依頼にアクセス禁止
@@ -60,7 +64,13 @@ Route::prefix('shop')->group(function () {
 Route::middleware(['auth:web', 'verified'])->group( function () {
     Route::post('reserve', [ReserveController::class, 'reserve']);
     Route::get('reserve_list', [ReserveController::class, 'getUserReservations']);
-    Route::get('reserve/{reservation}', [ReserveController::class, 'detailReservation']);
+    Route::get('mypage', [UserController::class, 'mypage']);
     Route::get('profile', [UserController::class, 'getProfile']);
+    Route::post('profile', [UserController::class, 'updateProfile']);
+    Route::get('review/{reservation}', [UserController::class, 'showFormReview']);
+    Route::post('review/{reservation}', [UserController::class, 'postReview']);
 });
 
+Route::middleware(['auth:web,shop'])->group( function () {
+    Route::get('reserve/{reservation}', [ReserveController::class, 'detailReservation']);
+});

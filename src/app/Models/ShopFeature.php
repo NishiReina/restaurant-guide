@@ -9,6 +9,10 @@ class ShopFeature extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'shop_id','feature_id'
+    ];
+
     public function feature(){
         return $this->belongsTo('App\Models\Feature');
     }

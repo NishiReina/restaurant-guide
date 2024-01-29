@@ -26,10 +26,9 @@
     display: block;
     border: 1px solid #000;
     border-radius: 10rem;
-    width: 120rem;
-    height: 30rem;
+    padding: 10rem 20rem;
     text-align: center;
-    line-height: 30rem;
+    font-weight: bold;
 }
 
 .edit__img:hover{
@@ -40,11 +39,26 @@
     display: none;
 }
 
-.simple__table td input{
+.simple__table input{
     display: inline-block;
-    width: 90%;
+    /* width: 90%; */
     padding: 10rem;
     border: 1px solid var(--border-dark-gray);
     border-radius: 5rem;
     text-align: center;
+}
+
+.simple__table input{
+    display: inline-block;
+    /* width: 90%; */
+    padding: 10rem;
+    border: 1px solid var(--border-dark-gray);
+    border-radius: 5rem;
+    text-align: center;
+}
+
+
+.profile__btn{
+    width: 200rem;
+    margin: 30rem 0 0 auto;
 }

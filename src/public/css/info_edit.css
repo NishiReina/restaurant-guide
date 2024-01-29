@@ -1,0 +1,48 @@
+
+:root {
+    --point-blue: #5ab4bd;
+    --border-gray: #F5F5F5;
+    --border-dark-gray: #d9d9d9;
+    --backgroud-gray: #d9d9d9;
+    --backgroud-light-gray: #F5F5F5;
+    --dark-gray: #565656;
+  }
+
+.info__wrap{
+    margin-top: 50rem;
+}
+
+.info__item{
+    width: 100%;
+    border: 1px dotted var(--dark-gray);
+}
+
+.item__title{
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    padding: 5rem;
+    width: 95%;
+    margin: 5rem auto;
+}
+
+.main__img{
+    width: 400rem;
+    height: auto;
+    margin: 0 auto;
+}
+
+.excel__table{
+    width: 95%;
+    margin: 5rem auto;
+}
+
+.excel__table th{
+    width: 30%;
+    text-align: center;
+}
+
+.excel__table td input, .excel__table td textarea{
+    width: 90%;
+}
