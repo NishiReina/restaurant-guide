@@ -45,4 +45,19 @@ class User extends Authenticatable
     public function profile(){
         return $this->hasOne('App\Models\Profile');
     }
+
+    public function bookmarks(){
+        return $this->hasMany('App\Models\BookMark');
+    }
+
+    public function getBookmarkShops(){
+        $shop_list = [];
+        foreach($this->bookmarks as $bookmark){
+            $shop = Shop::find($bookmark->shop_id);
+            if($shop){
+                array_push($shop_list, $shop);
+            }
+        }
+        return $shop_list;
+    }
 }

@@ -30,6 +30,7 @@ Route::prefix('admin')->group(function () {
     Route::post('login', [AdminLoginController::class, 'store']);
 
     Route::middleware('auth:admin')->group(function () {
+        Route::get('/', [AdminController::class, 'dashboard']);
         Route::get('/request/list', [AdminController::class, 'getRequestList']);
         Route::post('/request/approve/{change_request}', [AdminController::class, 'approveRequest']);
         Route::get('/shop/register', [ShopRegisterController::class, 'create'])->name('admin.register');
@@ -69,6 +70,8 @@ Route::middleware(['auth:web', 'verified'])->group( function () {
     Route::post('profile', [UserController::class, 'updateProfile']);
     Route::get('review/{reservation}', [UserController::class, 'showFormReview']);
     Route::post('review/{reservation}', [UserController::class, 'postReview']);
+    Route::post('bookmark/{shop}', [UserController::class, 'bookmark']);
+    Route::post('delete-bookmark/{shop}', [UserController::class, 'deleteBookMark']);
 });
 
 Route::middleware(['auth:web,shop'])->group( function () {

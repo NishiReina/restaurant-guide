@@ -16,6 +16,7 @@ class CreateReviewsTable extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->unsignedTinyInteger('star');
+            $table->string('img_url')->nullable();
             $table->string('title');
             $table->string('content');
             $table->foreignId('user_id')->constrained();

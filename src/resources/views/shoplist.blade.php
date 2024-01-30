@@ -55,10 +55,17 @@
                         <p class="shop__price">予算：<span>{{$shop->min_price}} ~ {{$shop->max_price}}</span></p>
                         <p class="shop__pr">{{$shop->pr}}</p>
                     </div>
-                    <form action="/shop-save/{{$shop->id}}">
+                    @if($shop->isBookMark())
+                    <form action="/delete-bookmark/{{$shop->id}}" method="POST">
+                        @csrf
+                        <button><img src="{{asset('img/bookmark-on.png')}}" alt=""></button>
+                    </form>
+                    @else
+                    <form action="/bookmark/{{$shop->id}}" method="POST">
                         @csrf
                         <button><img src="{{asset('img/bookmark-off.png')}}" alt=""></button>
                     </form>
+                    @endif
                 </div>
             </div>
             <form class="reservation" action="/">

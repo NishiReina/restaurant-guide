@@ -16,6 +16,6 @@ class ShopLoginResponse implements LoginResponseContract
     {
         return $request->wantsJson()
             ? response()->json(['two_factor' => false])
-            : redirect()->intended('shop/dashboard'); // ログイン後に遷移させたいリダイレクト先を指定
+            : redirect()->intended('shop'); // ログイン後に遷移させたいリダイレクト先を指定
     }
 }

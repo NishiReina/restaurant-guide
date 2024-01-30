@@ -56,10 +56,30 @@
                 </div>
                 @endforeach
             </div>
-            <div class="list_tab_content flex_column" id="tab2_content">
-                い
+            <div class="list_tab_content flex_column gap-30rem" id="tab2_content">
+                    @foreach($user->getBookmarkShops() as $shop)
+                    <div class="shop__wrap mypage__shop flex_row_start">
+                        <div class="shop__left">
+                            <a href="/detail/{{$shop->id}}">
+                                <span class="shop__img">
+                                    <img src="{{ \Storage::url($shop->img_url) }}" alt="">
+                                </span>
+                            </a>
+                        </div>
+                        <div class="shop__right flex_column gap-20rem">
+                            <a href="/detail/{{$shop->id}}"class="shop__name">{{$shop->name}}</a>
+                            <div class="small__rate-wrap">
+                                <span class="small__rate" style ="--score: {{ $shop->getAvgStar() }}"></span>
+                                <span class="num">{{ $shop->getAvgStar() }}</span>
+                            </div>
+                            <div class="border"></div>
+                            <p class="shop__price">予算：<span>{{$shop->min_price}} ~ {{$shop->max_price}}</span></p>
+                            <p class="shop__pr">{{$shop->pr}}</p>
+                        </div>
+                    </div>
+                    @endforeach
             </div>
-            <div class="list_tab_content flex_column" id="tab3_content">
+            <div class="list_tab_content flex_column gap-30rem" id="tab3_content">
                 @foreach($reservations as $reservation)
                 <div class="shop__wrap mypage__shop flex_row_start">
                     <div class="shop__left">

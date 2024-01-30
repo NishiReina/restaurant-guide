@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Reservation;
 use App\Models\Review;
+use App\Models\BookMark;
+use App\Models\Shop;
 
 class UserController extends Controller
 {
@@ -76,7 +78,18 @@ class UserController extends Controller
         return redirect('/mypage');
     }
 
-    public function bookmarkShop(Shop $shop){
-        
+    public function bookmark(Shop $shop){
+        $user = Auth::user();
+        BookMark::create([
+            'user_id' => $user->id,
+            'shop_id' => $shop->id
+        ]);
+        return redirect('shoplist');
+    }
+
+    public function deleteBookmark(Shop $shop){
+        $user = Auth::user();
+        BookMark::where('user_id', $user->id)->where('shop_id', $shop->id)->delete();
+        return redirect('shoplist');
     }
 }

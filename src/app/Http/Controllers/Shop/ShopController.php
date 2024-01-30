@@ -21,9 +21,9 @@ use Illuminate\Support\Carbon;
 
 class ShopController extends Controller
 {
-    public function index()
-    {
-        return view('shop.top');
+    public function index(){
+        $shop = Shop::find(Auth::id());
+        return view('shop.myshop', compact('shop'));
     }
 
     public function importantInfo(){

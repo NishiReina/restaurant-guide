@@ -10,6 +10,8 @@ use Illuminate\Notifications\Notifiable;
 // use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 
+use Illuminate\Support\Facades\Auth;
+
 class Shop extends Authenticatable
 {
     use HasApiTokens;
@@ -95,6 +97,10 @@ class Shop extends Authenticatable
         return $this->hasMany('App\Models\Pickup');
     }
 
+    public function bookmarks(){
+        return $this->hasMany('App\Models\BookMark');
+    }
+
     public function getReviews(){
         $reviews = [];
         foreach($this->reservations as $resevation){
@@ -131,6 +137,13 @@ class Shop extends Authenticatable
             $shop['star'] = $shop->getAvgStar();
         }
         return $shops->sortByDesc('star');
+    }
+
+    // あるショップをブックマークに登録しているかどうか
+    public function isBookMark(){
+        $user = Auth::user();
+        $exist = BookMark::where('shop_id',$this->id)->where('user_id', $user->id)->exists();
+        return $exist;
     }
 
 }
