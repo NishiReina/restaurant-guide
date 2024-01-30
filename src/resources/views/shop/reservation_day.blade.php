@@ -7,9 +7,9 @@
     <div class="container">
         <h1 class="page__title">予約カレンダー</h1>
         <div class="pagination flex_row_space-between align__items--center">
-            <a href='/shop/reservation/{{$ymd->copy()->subDay()->format("Y-m-d")}}' class="pagenation__btn"><span class="pagenation__arrow"><</span></a>
+            <a href='/shop/reservation?date={{$ymd->copy()->subDay()->format("Y-m-d")}}' class="pagenation__btn"><span class="pagenation__arrow"><</span></a>
             <p class="show__month">{{$ymd->copy()->format("Y年n月j日")}}</p>
-            <a href='/shop/reservation/{{$ymd->copy()->addDay()->format("Y-m-d")}}' class="pagenation__btn"><span class="pagenation__arrow">></span></a>
+            <a href='/shop/reservation?date={{$ymd->copy()->addDay()->format("Y-m-d")}}' class="pagenation__btn"><span class="pagenation__arrow">></span></a>
         </div>
         <table class="design__table">
             <tr>

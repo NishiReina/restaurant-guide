@@ -52,7 +52,7 @@ Route::prefix('shop')->group(function () {
         Route::get('/important/request/list', [ShopController::class, 'getChangeRequestList']);
         Route::get('/info/edit', [ShopController::class, 'editInfo']);
         Route::post('/info/edit', [ShopController::class, 'updateInfo']);
-        Route::get('/reservation/{date}', [ReserveController::class, 'getShopReservationOfDay']);
+        Route::get('/reservation', [ReserveController::class, 'getShopReservationOfDay']);
     });
 
     // 自店舗以外の変更依頼にアクセス禁止

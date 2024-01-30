@@ -34,9 +34,13 @@ class ReserveController extends Controller
         return view('reservation_detail', compact('reservation'));
     }
 
-    public function getShopReservationOfDay($date, Request $request){
+    public function getShopReservationOfDay(Request $request){
 
-        $ymd = Carbon::parse($date);
+        if($request->date){
+            $ymd = Carbon::parse($request->date);
+        }else{
+            $ymd = new Carbon();
+        }
 
         $shop = Shop::find(Auth::id());
         $reservations = Reservation::where('shop_id', $shop->id)->where('date',$ymd->toDateString())->get();

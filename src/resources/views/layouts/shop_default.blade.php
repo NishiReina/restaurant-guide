@@ -41,14 +41,14 @@
                 <ul>
                     <li>店舗ページ編集
                     <ul>
-                        <li class="sidebar__list2"><a>店舗トップ</a></li>
-                        <li class="sidebar__list2"><a>店舗重要情報</a></li>
+                        <li class="sidebar__list2"><a href="/shop">店舗トップ</a></li>
+                        <li class="sidebar__list2"><a href="/shop/important">店舗重要情報</a></li>
                     </ul>
                     </li>
                     <li>ネット予約管理
                     <ul>
-                        <li class="sidebar__list2"><a>予約カレンダー</a></li>
-                        <li class="sidebar__list2"><a>本日の予約</a></li>
+                        <li class="sidebar__list2"><a  href="/shop/important">予約カレンダー</a></li>
+                        <li class="sidebar__list2"><a  href="/shop/reservation">本日の予約</a></li>
                     </ul>
                     </li>
                 </ul>
