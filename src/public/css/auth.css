@@ -34,6 +34,8 @@
 }
 
 .auth__link{
+    display: block;
     color: #0073CC;
     margin-top: 15rem;
+    text-align: center;
 }
