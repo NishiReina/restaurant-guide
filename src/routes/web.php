@@ -45,6 +45,7 @@ Route::prefix('shop')->group(function () {
 
     Route::middleware('auth:shop')->group(function () {
         Route::get('/', [ShopController::class, 'index']);
+        Route::get('/calendar', [ShopController::class, 'calendar']);
         Route::get('/myshop', [ShopController::class, 'myShop']);
         Route::get('/important', [ShopController::class, 'importantInfo'])->name('shop.important');
         Route::get('/important/edit', [ShopController::class, 'editImportantInfo']);

@@ -6,10 +6,12 @@ use Carbon\Carbon;
 class CalendarWeek {
 
 	public $carbon;
+	public $style;
 	protected $index = 0;
 
-	function __construct($date, $index = 0){
+	function __construct($date, $style, $index = 0){
 		$this->carbon = new Carbon($date);
+		$this->style = $style;
 		$this->index = $index;
 	}
 
@@ -36,14 +38,14 @@ class CalendarWeek {
 
 			//前の月、もしくは後ろの月の場合は空白を表示
 			if($tmpDay->month != $this->carbon->month){
-				$day = new CalendarWeekBlankDay($tmpDay->copy());
+				$day = new CalendarWeekBlankDay($tmpDay->copy(), $this->style);
 				$days[] = $day;
 				$tmpDay->addDay(1);
 				continue;	
 			}
 				
 			//今月
-			$day = new CalendarWeekDay($tmpDay->copy());	
+			$day = new CalendarWeekDay($tmpDay->copy(), $this->style);	
 			$days[] = $day;
 			//翌日に移動
 			$tmpDay->addDay(1);

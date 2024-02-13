@@ -36,6 +36,7 @@ class ReserveController extends Controller
 
     public function getShopReservationOfDay(Request $request){
 
+        // yyyy-m-d
         if($request->date){
             $ymd = Carbon::parse($request->date);
         }else{

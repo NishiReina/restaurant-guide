@@ -44,6 +44,18 @@
 	border: solid 1px #999;
 }
 
+.full .calendar table th {
+    width: 140rem;
+    height: 30rem;
+    vertical-align: middle;
+}
+
+.full .calendar table td {
+    width: 140rem;
+    height: 80rem;
+    vertical-align: middle;
+}
+
 .day{
     display: inline-block;
     position: relative;
@@ -103,4 +115,8 @@
 .reserve__btn{
     margin-top: 20rem;
     height: 30rem;
+}
+
+.full{
+    margin-top: 30rem;
 }

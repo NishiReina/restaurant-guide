@@ -16,6 +16,8 @@ use App\Models\ChangeRequest;
 use App\Models\ShopRestRequest;
 use App\Http\Requests\ChangeRequestParameter;
 use Illuminate\Support\Facades\Storage;
+use App\Calendar\CalendarView;
+
 
 use Illuminate\Support\Carbon;
 
@@ -141,6 +143,25 @@ class ShopController extends Controller
          $shop = Shop::find(Auth::id());
 
         return view('shop.myshop', compact('shop'));
+    }
+
+    public function calendar(Request $request){
+
+        // クエリーのdateを受け取る
+		$date = $request->input("date");
+
+		// dateがYYYY-MMの形式かどうか判定する
+		if($date && preg_match("/^[0-9]{4}-[0-9]{2}$/", $date)){
+			$date = strtotime($date."-01");
+		}else{
+			$date = null;
+		}
+
+        //取得出来ない時は現在(=今月)を指定する
+		if(!$date)$date = time();
+
+        $calendar = new CalendarView($date, "full");
+        return view('shop.calendar', compact('calendar'));
     }
 
 }

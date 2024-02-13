@@ -6,9 +6,11 @@ use Carbon\Carbon;
 class CalendarView {
 
 	public $carbon;
+	public $style;
 
-	function __construct($date){
+	function __construct($date, $style){
 		$this->carbon = Carbon::parse($date)->timezone('Asia/Tokyo');
+		$this->style = $style;
 	}
 	/**
 	 * タイトル
@@ -44,7 +46,7 @@ class CalendarView {
 		$lastDay = $this->carbon->copy()->lastOfMonth();
 
 		//1週目
-		$week = new CalendarWeek($firstDay->copy());
+		$week = new CalendarWeek($firstDay->copy(), $this->style);
 		$weeks[] = $week;
 
 		//作業用の日

@@ -4,9 +4,11 @@ use Carbon\Carbon;
 
 class CalendarWeekDay {
 	public $carbon;
+	public $style;
 
-	function __construct($date){
+	function __construct($date, $style){
 		$this->carbon = new Carbon($date);
+		$this->style = $style;
 	}
 
 	function getClassName(){
@@ -18,6 +20,11 @@ class CalendarWeekDay {
 	 */
 	function render(){
 		// return '<p class="day">' . $this->carbon->format("j"). '</p>';
-		return '<label class="day"><input type="radio" name="date" value="'. $this->carbon. '">' . $this->carbon->format("j"). '</label>';
+		if($this->style == "half"){
+			return '<label class="day"><input type="radio" name="date" value="'. $this->carbon. '">' . $this->carbon->format("j"). '</label>';
+		}else{
+			// dd($this->carbon->format('Y-m-d'));
+			return '<a class="day" href="/shop/reservation?date='. $this->carbon->format('Y-m-d').'">' . $this->carbon->format("j"). '</a>';
+		}
 	}
 }

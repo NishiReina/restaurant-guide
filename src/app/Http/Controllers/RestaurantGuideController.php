@@ -36,7 +36,7 @@ class RestaurantGuideController extends Controller
 		if(!$date)$date = time();
 		
 		//カレンダーに渡す
-        $calendar = new CalendarView($date);
+        $calendar = new CalendarView($date, "half");
 
         return view('detail', compact('shop', 'calendar'));
     }
